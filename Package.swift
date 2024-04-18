@@ -29,6 +29,9 @@ let package = Package(
                 linkerSettings: [
                     .linkedLibrary("z"),
                     .linkedLibrary("sqlite3"),
+                ],
+                cSettings: [
+                    .headerSearchPath("python3.11")
                 ]
         ),
         .target(name: "PythonSupport",
