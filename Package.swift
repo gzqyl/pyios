@@ -26,14 +26,14 @@ let package = Package(
                     "libcrypto",
                     "libffi",
                 ],
-                linkerSettings: [
-                    .linkedLibrary("z"),
-                    .linkedLibrary("sqlite3"),
-                ],
                 cSettings: [
                     .headerSearchPath("python3.11"),
                     .headerSearchPath("openssl"),
                     .headerSearchPath("ffi")
+                ],
+                linkerSettings: [
+                    .linkedLibrary("z"),
+                    .linkedLibrary("sqlite3"),
                 ]
         ),
         .target(name: "PythonSupport",
