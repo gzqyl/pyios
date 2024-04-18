@@ -31,7 +31,9 @@ let package = Package(
                     .linkedLibrary("sqlite3"),
                 ],
                 cSettings: [
-                    .headerSearchPath("python3.11")
+                    .headerSearchPath("python3.11"),
+                    .headerSearchPath("openssl"),
+                    .headerSearchPath("ffi")
                 ]
         ),
         .target(name: "PythonSupport",
