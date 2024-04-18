@@ -15,10 +15,10 @@ let package = Package(
             ]),
     ],
     targets: [
-        .binaryTarget(name: "libpython3", url: "https://github.com/gzqyl/numpyios/releases/download/v2.0.1/libpython3.11.xcframework.zip"),
-        .binaryTarget(name: "libssl", url: "https://github.com/gzqyl/numpyios/releases/download/v2.0.1/libssl.xcframework.zip"),
-        .binaryTarget(name: "libcrypto", url: "https://github.com/gzqyl/numpyios/releases/download/v2.0.1/libcrypto.xcframework.zip"),
-        .binaryTarget(name: "libffi", url: "https://github.com/gzqyl/numpyios/releases/download/v2.0.1/libffi.xcframework.zip"),
+        .binaryTarget(name: "libpython3", url: "https://github.com/gzqyl/pyios/releases/download/v1.0.1/libpython3.11.xcframework.zip"),
+        .binaryTarget(name: "libssl", url: "https://github.com/gzqyl/pyios/releases/download/v1.0.1/libssl.xcframework.zip"),
+        .binaryTarget(name: "libcrypto", url: "https://github.com/gzqyl/pyios/releases/download/v1.0.1/libcrypto.xcframework.zip"),
+        .binaryTarget(name: "libffi", url: "https://github.com/gzqyl/pyios/releases/download/v1.0.1/libffi.xcframework.zip"),
         .target(name: "LinkPython",
                 dependencies: [
                     "libpython3",
