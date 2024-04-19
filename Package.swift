@@ -27,15 +27,16 @@ let package = Package(
                 "libcrypto",
                 "libffi",
             ],
-            cSettings: [
-                .headerSearchPath("./python3.11"),
-                .headerSearchPath("./python3.11/cpython"),
-                .headerSearchPath("./python3.11/internal"),
-                .headerSearchPath("./openssl/crypto"),
-                .headerSearchPath("./openssl/internal"),
-                .headerSearchPath("./openssl/openssl"),
-                .headerSearchPath("./ffi")
-            ],
+            publicHeadersPath: "public",
+            // cSettings: [
+            //     .headerSearchPath("./python3.11"),
+            //     .headerSearchPath("./python3.11/cpython"),
+            //     .headerSearchPath("./python3.11/internal"),
+            //     .headerSearchPath("./openssl/crypto"),
+            //     .headerSearchPath("./openssl/internal"),
+            //     .headerSearchPath("./openssl/openssl"),
+            //     .headerSearchPath("./ffi")
+            // ],
             linkerSettings: [
                 .linkedLibrary("z"),
                 .linkedLibrary("sqlite3"),
@@ -44,29 +45,29 @@ let package = Package(
         .target(
             name: "PythonSupport",
             dependencies: ["LinkPython"],
-            resources: [.copy("lib")],
-            cSettings: [
-                .headerSearchPath("./python3.11"),
-                .headerSearchPath("./python3.11/cpython"),
-                .headerSearchPath("./python3.11/internal"),
-                .headerSearchPath("./openssl/crypto"),
-                .headerSearchPath("./openssl/internal"),
-                .headerSearchPath("./openssl/openssl"),
-                .headerSearchPath("./ffi")
-            ]
+            resources: [.copy("lib")]
+            // cSettings: [
+            //     .headerSearchPath("./python3.11"),
+            //     .headerSearchPath("./python3.11/cpython"),
+            //     .headerSearchPath("./python3.11/internal"),
+            //     .headerSearchPath("./openssl/crypto"),
+            //     .headerSearchPath("./openssl/internal"),
+            //     .headerSearchPath("./openssl/openssl"),
+            //     .headerSearchPath("./ffi")
+            // ]
         ),
         .testTarget(
             name: "PythonTests",
-            dependencies: ["PythonSupport"],
-            cSettings: [
-                .headerSearchPath("./python3.11"),
-                .headerSearchPath("./python3.11/cpython"),
-                .headerSearchPath("./python3.11/internal"),
-                .headerSearchPath("./openssl/crypto"),
-                .headerSearchPath("./openssl/internal"),
-                .headerSearchPath("./openssl/openssl"),
-                .headerSearchPath("./ffi")
-            ]
+            dependencies: ["PythonSupport"]
+            // cSettings: [
+            //     .headerSearchPath("./python3.11"),
+            //     .headerSearchPath("./python3.11/cpython"),
+            //     .headerSearchPath("./python3.11/internal"),
+            //     .headerSearchPath("./openssl/crypto"),
+            //     .headerSearchPath("./openssl/internal"),
+            //     .headerSearchPath("./openssl/openssl"),
+            //     .headerSearchPath("./ffi")
+            // ]
         ),
     ]
 )
