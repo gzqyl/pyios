@@ -27,9 +27,13 @@ let package = Package(
                     "libffi",
                 ],
                 cSettings: [
-                    .headerSearchPath("python3.11"),
-                    .headerSearchPath("openssl"),
-                    .headerSearchPath("ffi")
+                    .headerSearchPath("./python3.11"),
+                    .headerSearchPath("./python3.11/cpython"),
+                    .headerSearchPath("./python3.11/internal"),
+                    .headerSearchPath("./openssl/crypto"),
+                    .headerSearchPath("./openssl/internal"),
+                    .headerSearchPath("./openssl/openssl"),
+                    .headerSearchPath("./ffi")
                 ],
                 linkerSettings: [
                     .linkedLibrary("z"),
