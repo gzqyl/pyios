@@ -1,4 +1,5 @@
-#everytime added xcode, if something updated, we should add a new patch branch
+# this is correct repo now, keep as it is if there's no error
+# any issues, please just considerate inquiring the original author, I have modified much just for my own project, it may or may not suitable for your project
 # Python-iOS
 
 This swift package enables you to use python modules in your iOS apps.
