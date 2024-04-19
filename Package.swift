@@ -44,6 +44,7 @@ let package = Package(
         .target(
             name: "PythonSupport",
             dependencies: ["LinkPython"],
+            resources: [.copy("lib")],
             cSettings: [
                 .headerSearchPath("./python3.11"),
                 .headerSearchPath("./python3.11/cpython"),
@@ -52,8 +53,7 @@ let package = Package(
                 .headerSearchPath("./openssl/internal"),
                 .headerSearchPath("./openssl/openssl"),
                 .headerSearchPath("./ffi")
-            ],
-            resources: [.copy("lib")]
+            ]
         ),
         .testTarget(
             name: "PythonTests",
