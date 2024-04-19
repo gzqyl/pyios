@@ -27,16 +27,15 @@ let package = Package(
                 "libcrypto",
                 "libffi",
             ],
-            publicHeadersPath: "public",
-            // cSettings: [
-            //     .headerSearchPath("./python3.11"),
-            //     .headerSearchPath("./python3.11/cpython"),
-            //     .headerSearchPath("./python3.11/internal"),
-            //     .headerSearchPath("./openssl/crypto"),
-            //     .headerSearchPath("./openssl/internal"),
-            //     .headerSearchPath("./openssl/openssl"),
-            //     .headerSearchPath("./ffi")
-            // ],
+            cSettings: [
+                .headerSearchPath("./python3.11"),
+                .headerSearchPath("./python3.11/cpython"),
+                .headerSearchPath("./python3.11/internal"),
+                .headerSearchPath("./openssl/crypto"),
+                .headerSearchPath("./openssl/internal"),
+                .headerSearchPath("./openssl/openssl"),
+                .headerSearchPath("./ffi")
+            ],
             linkerSettings: [
                 .linkedLibrary("z"),
                 .linkedLibrary("sqlite3"),
